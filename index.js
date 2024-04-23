@@ -247,7 +247,7 @@ const migrateList = async function (opts) {
       }
       if (!opts.skipExtend) {
         newopts.source = extendURL(newopts.source, dbname)
-        newopts.target = extendURL(newopts.target, dbname)
+        newopts.target = extendURL(newopts.target, `${dbname}${opts.suffix}`);
       }
       newopts.ee = new EventEmitter()
       newopts.ee.on('status', (s) => {
